@@ -1,0 +1,425 @@
+/* ================= GLOBAL ================= */
+:root {
+    --primary: #0b0f19;
+    --secondary: #7dd3fc;
+    --accent: #38bdf8;
+    --bg: #0a0f1a;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0f1a, #0b0f19);
+    color: var(--text);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(11,15,25,0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--secondary);
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ================= MENU TOGGLE ================= */
+.menu-toggle {
+    display: none;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* ================= TITLE ================= */
+.title {
+    text-align: center;
+    margin: 50px 0 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ================= CARD ================= */
+.card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    border: 1px solid rgba(125,211,252,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* ================= INFO BOX ================= */
+.info-box h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: var(--secondary);
+}
+
+.info-box p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ================= PROFILE ================= */
+.profile-wrapper {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.profile-wrapper img {
+    width: 260px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.profile-text h2 {
+    margin-bottom: 10px;
+}
+
+.profile-text p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 768px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #0b0f19;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .profile-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-wrapper img {
+        width: 100%;
+    }
+}
+
+/* ================= PROFILE HEADER ================= */
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary);
+    margin-bottom: 10px;
+}
+
+.profile-header h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.profile-header p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* ================= PROFILE MENU ================= */
+.profile-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* CARD DI PROFILE */
+.profile-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid rgba(125,211,252,0.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(125,211,252,0.3);
+}
+
+/* JUDUL CARD */
+.profile-card h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--secondary);
+}
+
+/* ISI */
+.profile-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ================= BUTTON ================= */
+/* BUTTON EDIT (MERAH ELEGAN) */
+.profile-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    font-size: 13px;
+    background: linear-gradient(135deg, #7f1d1d, #dc2626);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.profile-btn:hover {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+/* ================= STATUS PESANAN ================= */
+.order-status {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* WARNA STATUS */
+.status.proses {
+    background: rgba(59,130,246,0.2);
+    color: #60a5fa;
+}
+
+.status.kirim {
+    background: rgba(125,211,252,0.2);
+    color: #7dd3fc;
+}
+
+.status.selesai {
+    background: rgba(34,197,94,0.2);
+    color: #4ade80;
+}
+
+
+
+/* ================= HERO ================= */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0b0f19, #111827);
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #38bdf8, #7dd3fc);
+    color: #0b0f19;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #7dd3fc, #bae6fd);
+}
+
+/* ================= SECTION ================= */
+.section-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* ================= CATEGORY ================= */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.category-card {
+    background: var(--card);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    background: rgba(125,211,252,0.1);
+}
+
+/* input */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  display: center;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #e2e8f0;
+  outline: none;
+  transition: 0.3s;
+  cursor: var(--text);
+}
+
+/* placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: #64748b;
+}
+
+/* focus effect */
+input:focus,
+textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.dd {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    font-size: 17px;
+    background:#0f172a;
+    color: #64748b;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: default;
+    font-size: 14px;
+}
+
+.username {
+  text-align:center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight:700;
+  background: #0f172a;
+}
+
+.profile-foto {
+    background:none;
+    padding: 20px;
+}
+
+.ganti-foto {
+    margin-top: 10px;
+    padding: 4px 10px;
+    font-size: 13px;
+    background: linear-gradient(135deg, #7f1d1d, #dc2626);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.ganti-foto:hover {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+#fotoProfile {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
