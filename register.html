@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<link rel="stylesheet" href="css/logreg.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-box">
+        <form class="form active">
+            <h2>Create Account</h2>
+
+            <label>Username</label>
+            <input id="username" placeholder="Username" required>
+
+            <label>Email</label>
+            <input id="email" type="email" placeholder="Email" required>
+
+            <label>Password</label>
+            <input id="password" type="password" placeholder="Password" required>
+
+            <label>Nama Lengkap</label>
+            <input id="full_name" placeholder="Full Name" required>
+
+            <label>No. Handphone</label>
+            <input id="phone" placeholder="08xxxxxxxxxx" required>
+
+            <!-- ===== ALAMAT ===== -->
+            <h3 style="margin-top:10px;">Alamat Pengiriman</h3>
+
+            <label>Provinsi</label>
+            <input id="provinsi" placeholder="Contoh: Jawa Barat" required>
+
+            <label>Kota / Kabupaten</label>
+            <input id="kota" placeholder="Contoh: Bandung" required>
+
+            <label>Kecamatan</label>
+            <input id="kecamatan" placeholder="Contoh: Sukajadi" required>
+
+            <label>Kode Pos</label>
+            <input id="kode_pos" placeholder="5 digit" required>
+
+            <label>Alamat Lengkap</label>
+            <textarea id="address" placeholder="Jl. ..., No rumah, RT/RW" required></textarea>
+
+            <!-- ERROR -->
+            <p id="error" style="color:red; font-size:12px;"></p>
+
+            <button onclick="register()" class="btn">Register</button>
+
+            <p class="switch">
+                Sudah punya akun? <a href="login.html">Login</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<script src="js/logreg.js"></script>
+
+<script>register()</script>
+
+</body>
+</html>
