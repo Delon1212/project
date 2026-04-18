@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Profile</title>
+    <link rel="stylesheet" href="css/logreg.css">
+</head>
+<body>
+
+
+    <div  class="container">
+    <div class="form-box">
+        <form class="form active">
+            <h2>Edit Profile</h2>
+            <label>Ganti Nama Lengkap</label>
+            <input id="full_name" placeholder="Full Name">
+
+            <label>Ganti No. Handphone</label>
+            <input id="phone" placeholder="08xxxxxxxxxx">
+
+            <!-- ===== ALAMAT ===== -->
+            <h3 style="margin-top:10px;">Alamat Pengiriman</h3>
+
+            <label>Ganti Provinsi</label>
+            <input id="provinsi" placeholder="Contoh: Jawa Barat">
+
+            <label>Kota / Kabupaten</label>
+            <input id="kota" placeholder="Contoh: Bandung">
+
+            <label>Kecamatan</label>
+            <input id="kecamatan" placeholder="Contoh: Sukajadi">
+
+            <label>Kode Pos</label>
+            <input id="kode_pos" placeholder="5 digit">
+
+            <label>Alamat Lengkap</label>
+            <textarea id="address" placeholder="Jl. ..., No rumah, RT/RW"></textarea>
+            <button onclick="updateProfile(event)" class="btn">Simpan Perubahan</button>
+            <p class="switch"><a href="profile.html">Kembali</a></p>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="js/profile.js"></script>
+
+</body>
+</html>
